@@ -1,10 +1,6 @@
 class Solution:
     def maximumCount(self, nums: List[int]) -> int:
-        pos = []
-        neg = []
-        for n in nums:
-            if n < 0:
-                neg.append(n)
-            if n > 0:
-                pos.append(n)
-        return max(len(pos), len(neg))  
+        n = len(nums)
+        idx_neg = bisect.bisect_left(nums, 0)
+        idx_pos = bisect.bisect_right(nums, 0)
+        return max(idx_neg, n - idx_pos)
