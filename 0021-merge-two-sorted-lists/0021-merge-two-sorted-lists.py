@@ -12,9 +12,9 @@ class Solution:
             if l1.val < l2.val:
                 tail.next = l1
                 l1 = l1.next
-            else: 
+            else:
                 tail.next = l2
-                l2 = l2.next    
+                l2 = l2.next
             tail = tail.next
         
         if l1:
@@ -23,4 +23,3 @@ class Solution:
             tail.next = l2
         
         return dummy.next
-            
